@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+    <a class="navbar-brand" href="#" style="color: aliceblue;font-size: 20px ">HR Buddy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+        <ul class="navbar-nav" >
+            <li class="nav-item active">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/" style="color: aliceblue;font-size: 20px ">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/crud" style="color: aliceblue;font-size: 20px ">CRUD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/pricing" style="color: aliceblue;font-size: 20px ">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/dashboard" style="color: aliceblue;font-size: 20px ">Dashboard</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<section style="border: 2px solid deepskyblue;background-color: antiquewhite">
+
+    <h1 style="font-family: Consolas;text-align: center;">Send Salary To All Employees</h1>
+    <div style="text-align: center; position: center;padding-top: 20px">
+<!--        <button type ="button" onclick="alert('Salary Credited To All Accounts on ') ">-->
+<!--        Send and Generate Transaction Status</button>-->
+        <button button type="button" class="btn btn-primary" onclick="myFunc()">
+            Send Salary</button>
+        <br>
+        <br>
+
+        <marquee id = "demo" style="font-size: 20px;font-family: Consolas; background-color: lightblue;"></marquee>
+        <br>
+        <br>
+
+
+        <button button type="button" class="btn btn-primary" onclick="fun()">Generate Email</button>
+        <br>
+        <br>
+        <br>
+        <a href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/DownloadCsv" style="font-family: Consolas;
+        font-size: 20px;background-color: lightpink;border: solid blue;padding: 10px" >
+            Generate Transaction Report Click Me </a>
+        <br>
+        <br>
+
+    </div>
+
+    <table class="table table-bordered table-active">
+        <thead>
+        <tr>
+            <th>ID</th><th>Name</th><th>EMAIL</th><th>City</th><th>Phone</th><th>Position</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p:${Employees}">
+            <td th:text="${p.getId()}"></td>
+            <td th:text="${p.getName()}"></td>
+            <td th:text="${p.getEmail}"></td>
+            <td th:text="${p.getCity()}"></td>
+            <td th:text="${p.getPhone()}"></td>
+            <td th:text="${p.getPosition()}"></td>
+
+            <td>
+                <form>
+                    <label>AddBonus</label>
+                    <input></input>
+                    <button onclick="send()">Send Bonus</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</section>
+
+<script>
+    function myFunc()
+    {
+        document.getElementById("demo").innerHTML = "Salary Credited To All Accounts" +
+            " on and your remaining company balance is report is also generated";
+    }
+
+    function send()
+    {
+        alert("Bonus Sent to Employee");
+    }
+
+    function fun()
+    {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "testing237604",
+            Password: "vveqfaajkzaulgyu",
+            To: 'rajat.kadian123@gmail.com',
+            From: "testing237604@gmail.com",
+            Subject: "Bank Salary Credited",
+            Body: "Check your salary and salary slips!!",
+        })
+            .then(function (message) {
+                alert("mail sent successfully")
+            });
+    }
+</script>
+</body>
+
+<footer style="padding: 20px" >
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">StackInfotech LLC</h5>
+            <p class="card-text">Leading in Enterprises Softwares</p>
+            <a href="#" class="btn btn-primary">StackInfo Website</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+</footer>
+</html>
+

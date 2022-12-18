@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1" />
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+
+
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+    <a class="navbar-brand" href="#" style="color: aliceblue;font-size: 20px ">HR Buddy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" >
+            <li class="nav-item active">
+                <a class="nav-link" href="#" style="color: aliceblue;font-size: 20px;padding-right: 30px" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/crud" style="color: aliceblue;font-size: 20px ">CRUD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/pricing" style="color: aliceblue;font-size: 20px ">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/dashboard" style="color: aliceblue;font-size: 20px ">Dashboard</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<section>
+    <div class="container">
+        <h1 style="text-align: left">Data Graph</h1>
+
+    </div>
+</section>
+
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+    // var xValues = ["Burnaby", "Vancouver", "Surrey", "Richmond", "Toronto", "Kitchener", "london", "kelowna", "chilliwack", "missisauga", "Brampton", "Tokyo", "Delhi"];
+    // //var xValues = [[${name}]];
+    // var yValues =  ["23","25","26","36","46","56","66","78","32","43","56","67","34"]];
+    // var barColors = ["red", "green", "blue", "orange", "brown", "red", "green", "blue", "red", "green", "blue", "orange", "blue" ];
+    //
+    // new Chart("myChart", {
+    //     type: "bar",
+    //     data: {
+    //         labels: xValues,
+    //         datasets: [{
+    //             backgroundColor: barColors,
+    //             data: yValues
+    //         }]
+    //     },
+    //     options: {
+    //         legend: {display: false},
+    //         title: {
+    //             display: true,
+    //             text: "Employees"
+    //         }
+    //     }
+    // });
+
+    var xValues = ["Burnaby", "Vancouver", "Surrey", "Richmond", "Toronto", "Kitchener", "london", "kelowna", "chilliwack", "missisauga"];
+    var yValues = ["23","25","26","36","46","56","66","78","32","43","56","67","34"];
+    var barColors = ["red", "green", "blue", "orange", "brown", "red", "green", "blue", "red", "green", "blue", "orange", "blue"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Age And City Bar Graph"
+            }
+        }
+    });
+</script>
+
+</body>
+<footer  >
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">StackInfotech LLC</h5>
+            <p class="card-text">Leading in Enterprises Softwares</p>
+            <a href="#" class="btn btn-primary">StackInfo Website</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+</footer>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>-->
+<!--<body>-->
+
+<!--<canvas id="myChart" style="width:100%;max-width:600px"></canvas>-->
+
+<!--<script>-->
+<!--    var xValues = ["Sam", "Ajay", "Steve", "Erik", "Steve"];-->
+<!--    //var xValues = [[${name}]];-->
+<!--    var yValues =  [[${age}]];-->
+<!--    var barColors = ["red", "green", "blue", "orange", "brown"];-->
+
+<!--    new Chart("myChart", {-->
+<!--        type: "bar",-->
+<!--        data: {-->
+<!--            labels: xValues,-->
+<!--            datasets: [{-->
+<!--                backgroundColor: barColors,-->
+<!--                data: yValues-->
+<!--            }]-->
+<!--        },-->
+<!--        options: {-->
+<!--            legend: {display: false},-->
+<!--            title: {-->
+<!--                display: true,-->
+<!--                text: "Employees"-->
+<!--            }-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->

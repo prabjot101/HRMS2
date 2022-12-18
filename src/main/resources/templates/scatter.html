@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+    <a class="navbar-brand" href="#" style="color: aliceblue;font-size: 20px ">HR Buddy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav" >
+            <li class="nav-item active">
+                <a class="nav-link" href="#" style="color: aliceblue;font-size: 20px;padding-right: 30px" >Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/crud" style="color: aliceblue;font-size: 20px ">CRUD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/pricing" style="color: aliceblue;font-size: 20px ">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/dashboard" style="color: aliceblue;font-size: 20px ">Dashboard</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+
+<script>
+    var xyValues = [
+        {x:50000, y:37},
+        {x:60000, y:58},
+        {x:70000, y:28},
+        {x:80000, y:29},
+        {x:90000, y:36},
+        {x:100000, y:49},
+        {x:110000, y:50},
+        {x:120000, y:21},
+        {x:130000, y:24},
+        {x:140000, y:44},
+        {x:150000, y:35}
+    ];
+
+    new Chart("myChart", {
+        type: "scatter",
+        data: {
+            datasets: [{
+                pointRadius: 4,
+                pointBackgroundColor: "rgb(0,0,255)",
+                data: xyValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            scales: {
+                xAxes: [{ticks: {min: 40, max:160000}}],
+                yAxes: [{ticks: {min: 6, max:76}}],
+            }
+        }
+    });
+</script>
+
+</body>
+
+<div class="card text-center">
+    <div class="card-header">
+        Featured
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">StackInfotech LLC</h5>
+        <p class="card-text">Leading in Enterprises Softwares</p>
+        <a href="#" class="btn btn-primary">StackInfo Website</a>
+    </div>
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
+</div>
+</footer>
+</html>
+
+

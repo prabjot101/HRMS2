@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="Stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+          integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary" style="height: 70px;">
+    <a class="navbar-brand" href="#" style="color: aliceblue;font-size: 20px ">HR Buddy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+        <ul class="navbar-nav" >
+            <li class="nav-item active">
+                <a class="nav-link" href="#" style="color: aliceblue;font-size: 20px ">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/crud" style="color: aliceblue;font-size: 20px ">CRUD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/pricing" style="color: aliceblue;font-size: 20px ">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/dashboard" style="color: aliceblue;font-size: 20px ">Dashboard</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<section >
+
+<!--    <li >-->
+<!--        <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/barchart" >BAR</a>-->
+<!--    </li>-->
+
+<!--    <li >-->
+
+<!--        <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/piechart" >PIE</a>-->
+<!--    </li>-->
+
+<!--    <li >-->
+<!--        <a class="nav-link" href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/scatter" >Scatter</a>-->
+<!--    </li>-->
+
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">What To View</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td> <a href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/barchart">Bar Chart</a></td>
+
+
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td> <a href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/piechart">Pie Chart</a></td>
+
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td> <a href="http://ems-env.eba-prmhxq3q.us-west-2.elasticbeanstalk.com/scatter">Scatter</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+
+
+</section>
+
+<footer  >
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
